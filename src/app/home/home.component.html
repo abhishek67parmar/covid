@@ -1,0 +1,9 @@
+<h2 class="yellow-text">
+    Covid-19 data of India
+</h2>
+<div *ngFor="let state of covidIndiaData | keyvalue" class="purple-text">
+    <h5> Key: {{state.key}}</h5>
+    <div *ngFor="let district of state.value['districtData'] | keyvalue" class="red-text">
+        <b>{{district.key}}</b>--> active: {{district.value['active']}}
+    </div>
+</div>
