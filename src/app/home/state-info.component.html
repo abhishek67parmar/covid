@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>{{covidStateName}}</h2>
+<mat-dialog-content class="mat-typography">
+    <table class="striped centered">
+        <thead>
+            <tr>
+                <th>District</th>
+                <th>Active</th>
+                <th>Recovered</th>
+                <th>Deaths</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let district of covidStateData | keyvalue" class="deep-purple-text">
+                <td class="purple-text">{{district.key}}</td>
+                <td class="purple-text">{{district.value['active']}}</td>
+                <td class="purple-text">{{district.value['recovered']}}</td>
+                <td class="purple-text">{{district.value['deceased']}} </td>
+                <td class="purple-text">{{district.value['confirmed']}}</td>
+            </tr>
+            <!-- <tr *ngFor="let district of covidStateData | keyvalue" class="deep-purple-text">
+                <td class="purple-text">{{district.key}}</td>
+                <td class="purple-text">{{district.value['active']}} ({{district.value['active']/district.value['confirmed']*100}})</td>
+                <td class="purple-text">{{district.value['recovered']}} ({{district.value['recovered']/district.value['confirmed']*100}})</td>
+                <td class="purple-text">{{district.value['deceased']}} ({{district.value['deceased']/district.value['confirmed']*100}})</td>
+                <td class="purple-text">{{district.value['confirmed']}}</td>
+            </tr> -->
+        </tbody>
+    </table>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button color="accent" mat-dialog-close>Close</button>
+</mat-dialog-actions>

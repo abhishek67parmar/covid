@@ -12,7 +12,6 @@ export class CovidIndiaService {
 
   getCovidIndia() {
     return this.http.get('https://api.covid19india.org/state_district_wise.json');
-    // return this.http.get('https://jsonplaceholder.typicode.com/albums');
   }
 
 }
