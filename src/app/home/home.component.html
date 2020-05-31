@@ -1,9 +1,8 @@
-<h2 class="yellow-text">
+<h2 class="amber-text">
     Covid-19 data of India
 </h2>
-<div *ngFor="let state of covidIndiaData | keyvalue" class="purple-text">
-    <h5> Key: {{state.key}}</h5>
-    <div *ngFor="let district of state.value['districtData'] | keyvalue" class="red-text">
-        <b>{{district.key}}</b>--> active: {{district.value['active']}}
-    </div>
+<div *ngFor="let state of covidIndiaData | keyvalue">
+    <button mat-raised-button color="primary" (click)="openDialog(state.key)">{{state.key}}</button>
+    <br>
+    <br>
 </div>
